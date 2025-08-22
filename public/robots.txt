@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gateway-corporation.com/sitemap-index.xml
+
+# Gateway Corporation Ecuador - SEO directives
+# Gateway English, Gateway Academic, English con Gateway
+# Academia de inglés Ecuador
+
+# Allow all search engines to crawl our pages
+User-agent: *
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /private/
+
+# Priority pages for crawling
+Crawl-delay: 1
+
+# Additional sitemap locations
+Sitemap: https://gateway-corporation.com/sitemap-0.xml

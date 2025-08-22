@@ -1,11 +1,168 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ProgramsSection from '../components/ProgramsSection.astro';
+import PromotionsSection from '../components/PromotionsSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import StudentSystemSection from '../components/StudentSystemSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.js';
+import ThemeProvider from '../components/ThemeProvider.jsx';
+import { Toaster } from '../components/ui/sonner';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "Gateway Corporation Ecuador - Academia de Inglés #1 | Gateway English Institute";
+const pageDescription = "Descubre Gateway Corporation, la academia de inglés líder en Ecuador. Gateway English ofrece programas educativos de excelencia para primaria, secundaria y adultos. ¡Inscríbete en Gateway Academic hoy!";
+const keywords = "gateway corporation ecuador, gateway english, gateway academic, academia de inglés ecuador, cursos de inglés quito, instituto gateway english, english con gateway, gateway corporation quito, clases de inglés ecuador, gateway english institute";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://gateway-corporation.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Programas",
+      "item": "https://gateway-corporation.com/#programs"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Contacto",
+      "item": "https://gateway-corporation.com/#contact"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es Gateway Corporation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gateway Corporation es la academia de inglés líder en Ecuador con más de 15 años de experiencia. Ofrecemos programas Gateway English de alta calidad para estudiantes de primaria, secundaria y adultos."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "¿Dónde está ubicado Gateway English en Ecuador?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gateway Corporation tiene su sede principal en Quito, Ecuador, y ofrece programas Gateway Academic en todo el país."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué programas ofrece Gateway Academic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gateway Academic ofrece programas de inglés para educación primaria, secundaria, cursos intensivos de verano, y programas especializados English con Gateway para diferentes niveles."
+      }
+    }
+  ]
+};
+
+const combinedSchema = JSON.stringify([breadcrumbSchema, faqSchema]);
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={keywords}
+  schema={combinedSchema}
+>
+  <main>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gateway-blue text-white px-4 py-2 rounded-lg z-50">
+      Saltar al contenido principal
+    </a>
+
+    <!-- Theme Provider Wrapper -->
+    <ThemeProvider client:load>
+      <!-- Header Navigation -->
+      <Header />
+      
+      <!-- Main Content -->
+      <div id="main-content">
+        <!-- Hero Section with Image Slider -->
+        <HeroSlider />
+        
+        <!-- About Us - Mission, Vision, Values -->
+        <AboutSection />
+        
+        <!-- Educational Programs -->
+        <ProgramsSection />
+        
+        <!-- Promotions and Special Offers -->
+        <PromotionsSection />
+        
+        <!-- Testimonials -->
+        <TestimonialsSection />
+        
+        <!-- Student System Access -->
+        <StudentSystemSection />
+        
+        <!-- Contact Section -->
+        <ContactSection />
+      </div>
+      
+      <!-- Footer -->
+      <Footer />
+      
+      <!-- WhatsApp Button -->
+      <WhatsAppButton client:load />
+      
+      <!-- Toast Notifications -->
+      <Toaster client:load />
+    </ThemeProvider>
+  </main>
+</Layout>
+
+<!-- Structured Data for Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Gateway Corporation",
+  "alternateName": ["Gateway English Ecuador", "Gateway Academic"],
+  "description": "Academia de inglés líder en Ecuador - Gateway English Institute",
+  "url": "https://gateway-corporation.com",
+  "telephone": "+593-2-123-4567",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Principal 123",
+    "addressLocality": "Quito",
+    "addressRegion": "Pichincha",
+    "postalCode": "170501",
+    "addressCountry": "EC"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -0.1807,
+    "longitude": -78.4678
+  },
+  "openingHours": [
+    "Mo-Fr 07:00-18:00",
+    "Sa 08:00-14:00"
+  ],
+  "priceRange": "$$",
+  "image": "https://gateway-corporation.com/gateway-building.jpg",
+  "sameAs": [
+    "https://www.facebook.com/gatewaycorporationec",
+    "https://www.instagram.com/gateway_english_ec",
+    "https://www.linkedin.com/company/gateway-corporation-ecuador"
+  ]
+}
+</script>
 </Layout>

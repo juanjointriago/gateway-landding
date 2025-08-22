@@ -1,22 +1,213 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  schema?: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const {
+  title = "Gateway Corporation - Academia de Inglés Ecuador | Gateway English | Gateway Academic",
+  description = "Gateway Corporation es la academia de inglés líder en Ecuador. Programas educativos de excelencia, Gateway English para todos los niveles. Inscríbete en Gateway Academic y domina el inglés con Gateway.",
+  keywords = "gateway english, gateway corporation, gateway academic, english con gateway, academia de inglés ecuador, cursos de inglés ecuador, gateway english ecuador, instituto de inglés gateway, english academy ecuador, gateway corporation english",
+  ogImage = "/gateway-og-image.jpg",
+  canonicalURL = Astro.url.href,
+  schema
+} = Astro.props;
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Gateway Corporation",
+  "alternateName": ["Gateway English", "Gateway Academic"],
+  "description": "Academia de inglés líder en Ecuador con más de 15 años de experiencia en educación de calidad",
+  "url": "https://gateway-corporation.com",
+  "logo": "https://gateway-corporation.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "EC",
+    "addressRegion": "Pichincha",
+    "addressLocality": "Quito"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+593-2-123-4567",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish", "English"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/gatewaycorporation",
+    "https://www.instagram.com/gateway_english",
+    "https://www.linkedin.com/company/gateway-corporation"
+  ],
+  "hasCredential": "Certificación Internacional de Inglés",
+  "offers": {
+    "@type": "Course",
+    "name": "Programas de Inglés Gateway",
+    "description": "Cursos de inglés para primaria, secundaria y programas intensivos",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Gateway Corporation"
+    }
+  }
+};
+---
+
+<!doctype html>
+<html lang="es-EC" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gateway Corporation" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:site_name" content="Gateway Corporation" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1B3B8C" />
+    <meta name="msapplication-TileColor" content="#1B3B8C" />
+    <meta name="apple-mobile-web-app-title" content="Gateway Corporation" />
+    <meta name="application-name" content="Gateway Corporation" />
+    
+    <!-- Geo Tags for Ecuador -->
+    <meta name="geo.region" content="EC" />
+    <meta name="geo.placename" content="Ecuador" />
+    <meta name="geo.position" content="-0.1807;-78.4678" />
+    <meta name="ICBM" content="-0.1807, -78.4678" />
+    
+    <!-- Preload Critical Resources -->
+    <!-- <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin /> -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+    
+    {schema && <script type="application/ld+json" set:html={schema} />}
+    
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Local Keywords Meta for Ecuador SEO -->
+    <meta name="language" content="es-EC" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Additional structured data for Course Provider -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Programas de Inglés Gateway Corporation",
+      "description": "Cursos de inglés profesionales en Ecuador - Gateway English Institute",
+      "provider": {
+        "@type": "Organization",
+        "name": "Gateway Corporation",
+        "sameAs": "https://gateway-corporation.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Educación",
+        "availability": "https://schema.org/InStock"
+      },
+      "educationalLevel": "All Levels",
+      "teaches": "English Language",
+      "courseMode": ["Presencial", "Online"],
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "Inglés Primaria - Gateway Academic",
+          "courseMode": "Presencial"
+        },
+        {
+          "@type": "CourseInstance", 
+          "name": "Inglés Secundaria - Gateway English",
+          "courseMode": "Presencial"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Google Analytics (replace with actual tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Rich Snippets for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gateway Corporation",
+      "url": "https://gateway-corporation.com",
+      "logo": "https://gateway-corporation.com/logo.png",
+      "description": "Academia de inglés líder en Ecuador - Gateway English Institute",
+      "foundingDate": "2008",
+      "slogan": "Gateway to English Excellence",
+      "keywords": "gateway english ecuador, gateway corporation, gateway academic, academia ingles ecuador",
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Ecuador"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Programas Gateway English",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Gateway English Primaria"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Gateway Academic Secundaria"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+  </body>
+</html>

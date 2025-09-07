@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 export interface Props {
   title?: string;
   description?: string;
@@ -116,7 +117,7 @@ const schemaMarkup = {
     {schema && <script type="application/ld+json" set:html={schema} />}
     
     <!-- Import Styles -->
-    <link rel="stylesheet" href="/styles/global.css" />
+    <!-- <link rel="stylesheet" href="/styles/global.css" /> -->
 
     <!-- Local Keywords Meta for Ecuador SEO -->
     <meta name="language" content="es-EC" />
@@ -208,6 +209,42 @@ const schemaMarkup = {
         ]
       }
     }
+    </script>
+
+    <!-- Animation Observer Script -->
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -100px 0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              const delay = element.getAttribute('data-delay') || '0';
+              
+              setTimeout(() => {
+                element.classList.add('animate');
+              }, parseInt(delay));
+              
+              observer.unobserve(element);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        const animatedElements = document.querySelectorAll(
+          '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .animate-on-scroll-scale'
+        );
+        
+        animatedElements.forEach(element => {
+          observer.observe(element);
+        });
+      });
     </script>
   </body>
 </html>

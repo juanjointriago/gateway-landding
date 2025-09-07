@@ -13,34 +13,34 @@ const heroSlides = [
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop",
     cta: "Conocer Programas",
     stats: [
-      { icon: Users, value: "2000+", label: "Estudiantes" },
+      { icon: Users, value: "630+", label: "Estudiantes" },
       { icon: Award, value: "15+", label: "Años de experiencia" },
-      { icon: BookOpen, value: "20+", label: "Programas" }
+      { icon: BookOpen, value: "9+", label: "Programas" }
     ]
   },
   {
     id: 2,
     title: "Gateway English",
-    subtitle: "Educación primaria de excelencia",
-    description: "Gateway Academic ofrece programas especializados de inglés para estudiantes de primaria con metodología innovadora y profesores certificados.",
+    subtitle: "Preparación para certificaciones",
+    description: "Gateway Academic ofrece programas especializados de inglés para estudiantes en todos los niveles educativos, con metodología innovadora y profesores certificados.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop",
-    cta: "Ver Programas Primaria",
+    cta: "Ver Programas",
     stats: [
-      { icon: BookOpen, value: "6", label: "Niveles" },
-      { icon: Users, value: "95%", label: "Satisfacción" },
+      { icon: BookOpen, value: "9", label: "Niveles" },
+      { icon: Users, value: "97%", label: "Satisfacción" },
       { icon: Award, value: "100%", label: "Certificación" }
     ]
   },
   {
     id: 3,
     title: "Gateway Academic",
-    subtitle: "Secundaria que transforma vidas",
-    description: "Programas Gateway English para secundaria que preparan a los estudiantes para un futuro global con certificaciones internacionales.",
+    subtitle: "Institución que transforma vidas",
+    description: "Programas Gateway English para estudiantes y profesionales que preparan para un futuro global con certificaciones internacionales.",
     image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&h=800&fit=crop",
     cta: "Explorar Secundaria",
     stats: [
       { icon: Award, value: "Cambridge", label: "Certificación" },
-      { icon: Users, value: "500+", label: "Graduados" },
+      { icon: Users, value: "300+", label: "Graduados" },
       { icon: BookOpen, value: "A2-C1", label: "Niveles" }
     ]
   }
@@ -104,7 +104,7 @@ export default function HeroSliderInteractive() {
 
   return (
     <>
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Slides */}
         {heroSlides.map((slide, index) => (
           <div

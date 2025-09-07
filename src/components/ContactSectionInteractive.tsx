@@ -6,6 +6,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Label } from './ui/label';
+import { info } from './info';
 
 interface FormData {
   name: string;
@@ -248,14 +249,14 @@ export default function ContactSectionInteractive() {
                       className="w-full justify-start text-left bg-green-600 hover:bg-green-700"
                     >
                       <Phone className="w-4 h-4 mr-2" />
-                      Llamar Ahora: +593 2 123 4567
+                      Llamar Ahora: {info.contactPhone}
                     </Button>
                     <Button
                       onClick={() => window.open('https://wa.me/593987654321', '_blank')}
                       className="w-full justify-start text-left bg-green-500 hover:bg-green-600"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      WhatsApp: +593 98 765 4321
+                      WhatsApp: {info.contactPhone}
                     </Button>
                   </div>
                 </CardContent>
@@ -275,14 +276,14 @@ export default function ContactSectionInteractive() {
                   </p>
                   <div className="space-y-2">
                     <p className="font-medium text-gray-900 dark:text-white">
-                      Av. Amazonas N24-03 y Colón
+                      {info.address}
                     </p>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Quito, Ecuador
+                      {info.city}, {info.country}
                     </p>
                   </div>
                   <Button
-                    onClick={() => window.open('https://maps.google.com', '_blank')}
+                    onClick={() => window.open(`${info.googleMapLink}`, '_blank')}
                     variant="outline"
                     className="w-full"
                   >
@@ -304,15 +305,15 @@ export default function ContactSectionInteractive() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-300">Lunes - Viernes:</span>
-                      <span className="font-medium text-gray-900 dark:text-white">7:00 AM - 6:00 PM</span>
+                      <span className="font-medium text-gray-900 dark:text-white">{info.operatingHoursDetails.weekdays}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-300">Sábados:</span>
-                      <span className="font-medium text-gray-900 dark:text-white">8:00 AM - 2:00 PM</span>
+                      <span className="font-medium text-gray-900 dark:text-white">{info.operatingHoursDetails.saturdays}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-300">Domingos:</span>
-                      <span className="font-medium text-gray-900 dark:text-white">Cerrado</span>
+                      <span className="font-medium text-gray-900 dark:text-white">{info.operatingHoursDetails.sundays}</span>
                     </div>
                   </div>
                 </CardContent>

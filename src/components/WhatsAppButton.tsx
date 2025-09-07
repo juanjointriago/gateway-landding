@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle, X } from 'lucide-react';
+import { info } from './info';
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,8 +20,7 @@ export default function WhatsAppButton() {
     const message = encodeURIComponent(
       "¡Hola! Me interesa obtener más información sobre los programas de Gateway Corporation. ¿Podrían ayudarme?"
     );
-    const phoneNumber = "593987654321"; // Reemplazar con el número real
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${info.whatsAppNumber}?text=${message}`;
     
     window.open(whatsappUrl, '_blank');
     setShowTooltip(false);

@@ -1,4 +1,6 @@
 ---
+import { info } from "./info";
+
 // No necesitamos importar lucide-react, usaremos SVG estáticos
 ---
 
@@ -87,8 +89,7 @@
           <h3 class="text-gateway-blue dark:text-gateway-blue-light">Misión</h3>
         </div>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-          Brindar educación en inglés de excelencia que abra puertas al mundo global, 
-          formando estudiantes competentes y seguros en el idioma universal.
+          {info.mission}
         </p>
       </div>
 
@@ -105,8 +106,7 @@
           <h3 class="text-gateway-blue dark:text-gateway-blue-light">Visión</h3>
         </div>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-          Ser la academia de inglés líder en Ecuador, reconocida por la calidad educativa 
-          y el éxito de nuestros estudiantes Gateway English y Gateway Academic.
+          {info.vision}
         </p>
       </div>
 
@@ -123,19 +123,35 @@
         <div class="space-y-2 text-gray-600 dark:text-gray-300">
           <div class="flex items-center">
             <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
-            <span>Excelencia educativa</span>
+            <span class="font-semibold">{info.values[0].title}</span>
           </div>
           <div class="flex items-center">
             <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
-            <span>Compromiso</span>
+            <span class="text-gray-600 dark:text-gray-300">{info.values[0].description}</span>
           </div>
           <div class="flex items-center">
             <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
-            <span>Innovación</span>
+            <span class="font-semibold">{info.values[1].title}</span>
           </div>
           <div class="flex items-center">
             <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
-            <span>Integridad</span>
+            <span>{info.values[1].description}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
+            <span class="font-semibold">{info.values[2].title}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
+            <span >{info.values[2].description}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
+            <span class="font-semibold">{info.values[3].title}</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-2 h-2 bg-gateway-blue rounded-full mr-3"></div>
+            <span>{info.values[3].description}</span>
           </div>
         </div>
       </div>

@@ -54,25 +54,25 @@ export default function ContactSectionInteractive() {
     {
       icon: MapPin,
       title: 'Dirección',
-      details: ['Av. Amazonas N24-03 y Colón', 'Quito, Ecuador'],
+      details: [info.address, `${info.city}, ${info.country}`],
       color: 'text-blue-600 dark:text-blue-400'
     },
     {
       icon: Phone,
-      title: 'Teléfonos',
-      details: ['+593 2 123 4567', '+593 98 765 4321'],
+      title: 'Teléfono',
+      details: [info.contactPhone],
       color: 'text-green-600 dark:text-green-400'
     },
     {
       icon: Mail,
-      title: 'Correos',
-      details: ['info@gateway-english.com', 'admisiones@gateway-english.com'],
+      title: 'Correo',
+      details: [info.contactEmail],
       color: 'text-orange-600 dark:text-orange-400'
     },
     {
       icon: Clock,
       title: 'Horarios',
-      details: ['Lun - Vie: 7:00 AM - 6:00 PM', 'Sáb: 8:00 AM - 2:00 PM'],
+      details: [info.operatingHoursDetails.weekdays, info.operatingHoursDetails.saturdays],
       color: 'text-purple-600 dark:text-purple-400'
     }
   ];

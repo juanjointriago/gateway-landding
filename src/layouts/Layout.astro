@@ -217,8 +217,8 @@ const schemaMarkup = {
       document.addEventListener('DOMContentLoaded', function() {
         const observerOptions = {
           root: null,
-          rootMargin: '0px 0px -100px 0px',
-          threshold: 0.1
+          rootMargin: '0px 0px -50px 0px',
+          threshold: 0.05
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -244,6 +244,16 @@ const schemaMarkup = {
         animatedElements.forEach(element => {
           observer.observe(element);
         });
+
+        // Fallback: Si después de 3 segundos algunos elementos no se han animado, mostrarlos
+        setTimeout(() => {
+          const hiddenElements = document.querySelectorAll(
+            '.animate-on-scroll:not(.animate), .animate-on-scroll-left:not(.animate), .animate-on-scroll-right:not(.animate), .animate-on-scroll-scale:not(.animate)'
+          );
+          hiddenElements.forEach(element => {
+            element.classList.add('animate');
+          });
+        }, 3000);
       });
     </script>
   </body>

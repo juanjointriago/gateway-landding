@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Play, BookOpen, Users, Award, ArrowRight } f
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallBack';
 import { EnrollmentModal } from './EnrollmentModal';
+import { stats } from '../data/mockdata';
 
 const heroSlides = [
   {
@@ -10,12 +11,12 @@ const heroSlides = [
     title: "Gateway Corporation",
     subtitle: "Tu puerta al éxito en inglés",
     description: "Descubre la excelencia educativa en Gateway English Ecuador. Programas académicos de primer nivel para primaria, secundaria y adultos.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop",
+    image: "banner/cert.jpeg",
     cta: "Conocer Programas",
     stats: [
-      { icon: Users, value: "630+", label: "Estudiantes" },
-      { icon: Award, value: "15+", label: "Años de experiencia" },
-      { icon: BookOpen, value: "9+", label: "Programas" }
+      { icon: Users, value: stats[0].value, label: "Estudiantes" },
+      { icon: Award, value: stats[1].value, label: "Años de experiencia" },
+      { icon: BookOpen, value: stats[2].value, label: "Programas" }
     ]
   },
   {
@@ -23,7 +24,7 @@ const heroSlides = [
     title: "Gateway English",
     subtitle: "Preparación para certificaciones",
     description: "Gateway Academic ofrece programas especializados de inglés para estudiantes en todos los niveles educativos, con metodología innovadora y profesores certificados.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop",
+    image: "banner/class2.jpeg",
     cta: "Ver Programas",
     stats: [
       { icon: BookOpen, value: "9", label: "Niveles" },
@@ -36,7 +37,46 @@ const heroSlides = [
     title: "Gateway Academic",
     subtitle: "Institución que transforma vidas",
     description: "Programas Gateway English para estudiantes y profesionales que preparan para un futuro global con certificaciones internacionales.",
-    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&h=800&fit=crop",
+    image: "banner/class4.jpeg",
+    cta: "Explorar Secundaria",
+    stats: [
+      { icon: Award, value: "Cambridge", label: "Certificación" },
+      { icon: Users, value: "300+", label: "Graduados" },
+      { icon: BookOpen, value: "A2-C1", label: "Niveles" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Gateway Corporation",
+    subtitle: "Tu puerta al éxito en inglés",
+    description: "Descubre la excelencia educativa en Gateway English Ecuador. Programas académicos de primer nivel para primaria, secundaria y adultos.",
+    image: "banner/class.jpeg",
+    cta: "Conocer Programas",
+    stats: [
+      { icon: Users, value: stats[0].value, label: "Estudiantes" },
+      { icon: Award, value: stats[1].value, label: "Años de experiencia" },
+      { icon: BookOpen, value: stats[2].value, label: "Programas" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Gateway English",
+    subtitle: "Preparación para certificaciones",
+    description: "Gateway Academic ofrece programas especializados de inglés para estudiantes en todos los niveles educativos, con metodología innovadora y profesores certificados.",
+    image: "banner/class3.jpeg",
+    cta: "Ver Programas",
+    stats: [
+      { icon: BookOpen, value: "9", label: "Niveles" },
+      { icon: Users, value: "97%", label: "Satisfacción" },
+      { icon: Award, value: "100%", label: "Certificación" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Gateway Academic",
+    subtitle: "Institución que transforma vidas",
+    description: "Programas Gateway English para estudiantes y profesionales que preparan para un futuro global con certificaciones internacionales.",
+    image: "banner/grade.jpeg",
     cta: "Explorar Secundaria",
     stats: [
       { icon: Award, value: "Cambridge", label: "Certificación" },

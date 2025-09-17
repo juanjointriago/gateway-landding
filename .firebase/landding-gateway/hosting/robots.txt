@@ -1,12 +1,42 @@
 User-agent: *
 Allow: /
 
+# High-priority pages for Gateway Corporation keywords
+Allow: /index.html
+Allow: /programas
+Allow: /nosotros  
+Allow: /promociones
+Allow: /testimonios
+Allow: /contacto
+
 # Sitemap location
 Sitemap: https://inglescongateway.com/sitemap-index.xml
+Sitemap: https://inglescongateway.com/sitemap.xml
 
-# Gateway Corporation Ecuador - SEO directives
-# Gateway English, Gateway Academic, English con Gateway
-# Academia de inglés Ecuador
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Gateway Corporation Ibarra - SEO directives
+# Keywords: gateway corporation, ingles gateway, ingles con gateway
+# academia ingles, cambridge, gateway ibarra
+# Academia de inglés líder en Ibarra, Ecuador
+# Certificación Cambridge con profesores nativos
+
+# Block admin and dev files
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /api/
+Disallow: /.well-known/
+
+# Allow all image files for SEO
+Allow: /images/
+Allow: /logo/
+Allow: /promos/
+Allow: *.jpg
+Allow: *.jpeg  
+Allow: *.png
+Allow: *.webp
+Allow: *.svg
 
 # Allow all search engines to crawl our pages
 User-agent: *

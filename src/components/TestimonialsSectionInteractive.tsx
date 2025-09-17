@@ -3,6 +3,43 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { testimonials } from '../data/mockdata';
 
+// Función para generar colores consistentes basados en el nombre
+const getAvatarColor = (name: string) => {
+  const colors = [
+    'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-red-500', 
+    'bg-yellow-500', 'bg-pink-500', 'bg-indigo-500', 'bg-teal-500'
+  ];
+  const index = name.charCodeAt(0) % colors.length;
+  return colors[index];
+};
+
+// Función para extraer iniciales
+const getInitials = (name: string) => {
+  return name
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase())
+    .slice(0, 2)
+    .join('');
+};
+
+// Componente Avatar con iniciales
+const InitialsAvatar = ({ name, size = 'medium' }: { name: string; size?: 'small' | 'medium' | 'large' }) => {
+  const initials = getInitials(name);
+  const colorClass = getAvatarColor(name);
+  
+  const sizeClasses = {
+    small: 'w-12 h-12 text-sm',
+    medium: 'w-16 h-16 text-lg',
+    large: 'w-20 h-20 text-xl'
+  };
+
+  return (
+    <div className={`${sizeClasses[size]} ${colorClass} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}>
+      {initials}
+    </div>
+  );
+};
+
 export default function TestimonialsSectionInteractive() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -47,12 +84,11 @@ export default function TestimonialsSectionInteractive() {
                   "{testimonials[currentTestimonial].content}"
                 </p>
                 <div className="flex items-center justify-center mb-4">
-                  <img
-                    src={testimonials[currentTestimonial].image}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
+                  <InitialsAvatar 
+                    name={testimonials[currentTestimonial].name} 
+                    size="medium"
                   />
-                  <div className="text-left">
+                  <div className="text-left ml-4">
                     <h4 className="text-lg text-gray-800 dark:text-gray-100">
                       {testimonials[currentTestimonial].name}
                     </h4>
@@ -113,12 +149,11 @@ export default function TestimonialsSectionInteractive() {
               >
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-3"
+                    <InitialsAvatar 
+                      name={testimonial.name} 
+                      size="small"
                     />
-                    <div>
+                    <div className="ml-3">
                       <h4 className="text-sm text-gray-800 dark:text-gray-100">
                         {testimonial.name}
                       </h4>

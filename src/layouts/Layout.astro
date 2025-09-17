@@ -10,9 +10,9 @@ export interface Props {
 }
 
 const {
-  title = "Gateway Corporation - Academia de Inglés Ecuador | Gateway English | Gateway Academic",
-  description = "Gateway Corporation es la academia de inglés líder en Ecuador. Programas educativos de excelencia, Gateway English para todos los niveles. Inscríbete en Gateway Academic y domina el inglés con Gateway.",
-  keywords = "gateway english, gateway corporation, gateway academic, english con gateway, academia de inglés ecuador, cursos de inglés ecuador, gateway english ecuador, instituto de inglés gateway, english academy ecuador, gateway corporation english",
+  title = "Gateway Corporation Ibarra - Academia de Inglés Cambridge | Inglés Gateway | Inglés con Gateway",
+  description = "🏆 Gateway Corporation Ibarra - Academia inglés líder con certificación Cambridge. Aprende inglés con Gateway, profesores nativos, metodología única. Inglés Gateway para todos los niveles en Ibarra Ecuador.",
+  keywords = "gateway corporation, ingles gateway, ingles con gateway, academia ingles, cambridge, gateway ibarra, academia ingles ibarra, gateway corporation ibarra, ingles cambridge ibarra, profesores nativos ibarra, academia cambridge ibarra, gateway english ibarra, cursos cambridge, inglés certificado cambridge, instituto inglés gateway, gateway corporation ecuador",
   ogImage = "/gateway-og-image.jpg",
   canonicalURL = Astro.url.href,
   schema
@@ -22,37 +22,77 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Gateway Corporation",
-  "alternateName": ["Gateway English", "Gateway Academic"],
-  "description": "Academia de inglés líder en Ecuador con más de 15 años de experiencia en educación de calidad",
+  "alternateName": ["Gateway English", "Gateway Academic", "Inglés Gateway", "Academia Inglés Gateway"],
+  "description": "Academia inglés Gateway Corporation Ibarra - Certificación Cambridge con profesores nativos. Más de 15 años formando estudiantes exitosos en inglés.",
   "url": "https://inglescongateway.com",
-  "logo": "https://inglescongateway.com/logo.png",
+  "logo": "https://inglescongateway.com/logo/LOGO GATEWAY CORPORATION Signed.png",
+  "image": "https://inglescongateway.com/logo/LOGO GATEWAY CORPORATION Signed.png",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Ibarra Norte",
+    "addressLocality": "Ibarra",
+    "addressRegion": "Imbabura", 
     "addressCountry": "EC",
-    "addressRegion": "Pichincha",
-    "addressLocality": "Quito"
+    "postalCode": "100150"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "0.3471",
+    "longitude": "-78.1267"
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+593-2-123-4567",
+    "telephone": "+593-99-123-4567",
     "contactType": "customer service",
-    "availableLanguage": ["Spanish", "English"]
+    "availableLanguage": ["Spanish", "English"],
+    "areaServed": "EC"
   },
   "sameAs": [
     "https://www.facebook.com/gatewaycorporation",
-    "https://www.instagram.com/gateway_english",
+    "https://www.instagram.com/gateway_english", 
     "https://www.linkedin.com/company/gateway-corporation"
   ],
-  "hasCredential": "Certificación Internacional de Inglés",
-  "offers": {
-    "@type": "Course",
-    "name": "Programas de Inglés Gateway",
-    "description": "Cursos de inglés para primaria, secundaria y programas intensivos",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Gateway Corporation"
+  "hasCredential": [
+    "Certificación Cambridge",
+    "Profesores Nativos Certificados",
+    "Metodología Internacional"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "14",
+    "bestRating": "5"
+  },
+  "offers": [
+    {
+      "@type": "Course",
+      "name": "Gateway English For Everybody",
+      "description": "Programa inglés para todos los niveles con certificación Cambridge",
+      "provider": {
+        "@type": "EducationalOrganization", 
+        "name": "Gateway Corporation"
+      },
+      "coursePrerequisites": "Ninguno",
+      "educationalCredentialAwarded": "Certificación Cambridge",
+      "teaches": "Inglés como segundo idioma"
+    },
+    {
+      "@type": "Course", 
+      "name": "Gateway Academic Secundaria",
+      "description": "Programa intensivo inglés para estudiantes de secundaria",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Gateway Corporation"
+      },
+      "educationalLevel": "Secundaria",
+      "educationalCredentialAwarded": "Certificación Cambridge"
     }
-  }
+  ],
+  "foundingDate": "2008",
+  "numberOfEmployees": "25",
+  "priceRange": "$150-$300",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+  "currenciesAccepted": "USD"
 };
 ---
 
@@ -67,9 +107,28 @@ const schemaMarkup = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Gateway Corporation" />
+    <meta name="publisher" content="Gateway Corporation Ibarra" />
     <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Local SEO -->
+    <meta name="geo.region" content="EC-IM" />
+    <meta name="geo.placename" content="Ibarra" />
+    <meta name="geo.position" content="0.3471;-78.1267" />
+    <meta name="ICBM" content="0.3471, -78.1267" />
+    
+    <!-- Additional SEO -->
+    <meta name="language" content="es-EC" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="format-detection" content="telephone=yes" />
+    
+    <!-- Business Info -->
+    <meta name="business:hours" content="Mo-Fr 07:00-19:00" />
+    <meta name="business:phone" content="+593-99-123-4567" />
+    <meta name="business:website" content="https://inglescongateway.com" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -78,6 +137,11 @@ const schemaMarkup = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_EC" />
+    <meta property="og:site_name" content="Gateway Corporation Ibarra" />
+    <meta property="business:hours" content="Mo-Fr 07:00-19:00" />
+    <meta property="business:phone_number" content="+593-99-123-4567" />
+    <meta property="place:location:latitude" content="0.3471" />
+    <meta property="place:location:longitude" content="-78.1267" />
     <meta property="og:site_name" content="Gateway Corporation" />
     
     <!-- Twitter -->
@@ -125,36 +189,99 @@ const schemaMarkup = {
     <meta name="rating" content="general" />
     <meta name="revisit-after" content="7 days" />
     
-    <!-- Additional structured data for Course Provider -->
+    <!-- Additional structured data for Reviews and FAQs -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Programas de Inglés Gateway Corporation",
-      "description": "Cursos de inglés profesionales en Ecuador - Gateway English Institute",
-      "provider": {
-        "@type": "Organization",
-        "name": "Gateway Corporation",
-        "sameAs": "https://inglescongateway.com"
+      "@type": "LocalBusiness",
+      "name": "Gateway Corporation",
+      "alternateName": ["Inglés Gateway", "Academia Inglés Gateway", "Gateway Ibarra"],
+      "description": "Academia inglés Gateway Corporation Ibarra - Certificación Cambridge con profesores nativos",
+      "address": {
+        "@type": "PostalAddress", 
+        "streetAddress": "Ibarra Norte",
+        "addressLocality": "Ibarra",
+        "addressRegion": "Imbabura",
+        "addressCountry": "EC"
       },
-      "offers": {
-        "@type": "Offer",
-        "category": "Educación",
-        "availability": "https://schema.org/InStock"
-      },
-      "educationalLevel": "All Levels",
-      "teaches": "English Language",
-      "courseMode": ["Presencial", "Online"],
-      "hasCourseInstance": [
+      "review": [
         {
-          "@type": "CourseInstance",
-          "name": "Inglés Primaria - Gateway Academic",
-          "courseMode": "Presencial"
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ian Toapanta"
+          },
+          "reviewRating": {
+            "@type": "Rating", 
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Gateway es una muy buena opción para aprender inglés, pude conseguir mi nivel B1 desde Cambridge gracias a sus profesores nativos y a la metodología utilizada."
         },
         {
-          "@type": "CourseInstance", 
-          "name": "Inglés Secundaria - Gateway English",
-          "courseMode": "Presencial"
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Elizabeth Roman"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5", 
+            "bestRating": "5"
+          },
+          "reviewBody": "Las clases son increíbles; en cada una, el profesor nos dio recomendaciones para cada parte del examen que queríamos presentar, como el de Cambridge. Logré alcanzar el nivel que me había propuesto e incluso uno superior!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Alexis Romero"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Podría decir que aquí en Gateway Corporation es una de las mejores academias de Ibarra, excelente atención y lo mejor son todos los profesores."
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "14"
+      }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué programas ofrece Gateway Corporation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gateway Corporation ofrece Gateway English para todos los niveles, Gateway Academic para secundaria, programas de certificación Cambridge y cursos especializados con profesores nativos."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "¿Dónde está ubicada Gateway Corporation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gateway Corporation está ubicada en Ibarra Norte, provincia de Imbabura, Ecuador. Somos la academia de inglés líder en Ibarra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Gateway Corporation tiene certificación Cambridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, Gateway Corporation ofrece preparación y certificación Cambridge oficial. Nuestros estudiantes obtienen certificaciones reconocidas internacionalmente."
+          }
         }
       ]
     }

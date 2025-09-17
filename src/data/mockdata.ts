@@ -182,76 +182,145 @@ export const programs = [
 export const testimonials = [
   {
     id: 1,
-    name: "María González",
-    role: "Madre de familia",
-    image:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+    name: "Francisco Gómez",
+    role: "Graduado",
     content:
-      "Mi hija ha mejorado increíblemente su inglés en Gateway Corporation. Los profesores son excelentes y la metodología realmente funciona.",
+      "Gateway es la mejor opción para aprender inglés. Tienen maestros nativos y sumetodología es única. Además son personas amables y respetuosas.",
     rating: 5,
-    program: "Gateway English Primaria",
+    program: "Gateway English For Everybody",
     location: "Ibarra Norte",
   },
-  // {
-  //   id: 2,
-  //   name: "Carlos Rodríguez",
-  //   role: "Estudiante de secundaria",
-  //   image:
-  //     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-  //   content:
-  //     "Gateway Academic me ayudó a conseguir mi certificado Cambridge B2. Ahora me siento preparado para la universidad.",
-  //   rating: 5,
-  //   program: "Gateway Academic Secundaria",
-  //   location: "Quito Sur",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Ana Martínez",
-  //   role: "Profesional",
-  //   image:
-  //     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-  //   content:
-  //     "El curso intensivo para adultos fue perfecto para mi horario. En 4 meses logré el nivel que necesitaba para mi trabajo.",
-  //   rating: 5,
-  //   program: "Gateway Intensivo Adultos",
-  //   location: "Quito Centro",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Diego López",
-  //   role: "Gerente de Recursos Humanos",
-  //   image:
-  //     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-  //   content:
-  //     "Gateway Corporate transformó las habilidades de comunicación en inglés de nuestro equipo. Excelente inversión.",
-  //   rating: 5,
-  //   program: "Gateway Corporate",
-  //   location: "Empresas",
-  // },
-  // {
-  //   id: 5,
-  //   name: "Sofía Hernández",
-  //   role: "Estudiante universitaria",
-  //   image:
-  //     "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face",
-  //   content:
-  //     "Las clases online de Gateway son fantásticas. Pude estudiar desde casa con la misma calidad que las presenciales.",
-  //   rating: 5,
-  //   program: "Gateway Online",
-  //   location: "Virtual",
-  // },
-  // {
-  //   id: 6,
-  //   name: "Roberto Silva",
-  //   role: "Padre de familia",
-  //   image:
-  //     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-  //   content:
-  //     "Mis dos hijos participaron en el Summer Camp y fue una experiencia increíble. Aprendieron mucho mientras se divertían.",
-  //   rating: 5,
-  //   program: "Gateway Summer Camp",
-  //   location: "Quito",
-  // },
+  {
+    id: 2,
+    name: "Ian Toapanta",
+    role: "Graduado",
+    content:
+      "Gateway es una muy buena opción para aprender inglés, pude conseguir mi nivel B1 desde Cambridge gracias a sus profesores nativos y a la metodología utilizada.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 3,
+    name: "Favio Nicolás García Manosalvas",
+    role: "Graduado",
+    content:
+      "Es un excelente instituto de inglés, cuenta con profesores nativos y con su ayuda pude obtener mi certificación Cambridge B1. Fue una gran experiencia y lo recomiendo.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 4,
+    name: "Omar Ortiz",
+    role: "Graduado",
+    content:
+      "Gateway Corporation es la mejor opción para las personas que quieren aprender inglés. Desde mi experiencia personal les recomiendo este centro porque aquí les ofrecen clases de inglés con hablantes nativos que le ayudarán a desarrollar sus habilidades lingüísticas paso a paso.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 5,
+    name: "María José Garzón Guerrero",
+    role: "Graduado",
+    content:
+      "Es una excelente academia para aprender inglés a través de talleres y diferentes actividades interactivas que te ayudan a crecer y aprender. Cuentan con horarios flexibles y profesores certificados en el idioma, logrando así una experiencia única para cada alumno.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 6,
+    name: "Miki Vire",
+    role: "Graduado",
+    content:
+      "Es una muy buena academia para aprender inglés con diferentes talleres y actividades, los horarios son muy flexibles para cada estudiante y logras una experiencia única para cada persona.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 7,
+    name: "Leslie Mestanza Gomez",
+    role: "Graduado",
+    content:
+      "Los profes son super amables, y nos prestan atención uno por uno, en cada clase realizan actividades para aprender vocabulario extra.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 8,
+    name: "Yommy Pucuji",
+    role: "Graduado",
+    content:
+      "La academia es muy buena porque es muy práctica y los profesores ayudan mucho en el aprendizaje, las clases son muy divertidas y entendibles.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 9,
+    name: "Elizabeth Roman",
+    role: "Graduado",
+    content:
+      "Las clases son increíbles; en cada una, el profesor nos dio recomendaciones para cada parte del examen que queríamos presentar, como el de Cambridge. Mi profesora favorita, Chantal, siempre nos hizo sentir cómodos mientras aprendíamos y practicábamos conversaciones cotidianas, y además nos enseñó vocabulario nuevo. Incluso si aprendes en línea, es una buena opción. ¡Logré alcanzar el nivel que me había propuesto e incluso uno superior! En resumen, ¡hay muchísimas razones para elegir esta opción!",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 10,
+    name: "Alexis Romero",
+    role: "Graduado",
+    content:
+      "Podría decir que aquí en Gateway Corporation es una de las mejores academias de Ibarra, excelente atención y lo mejor son todos los profesores, todos son increíbles y divertidos, te enseñan muy bien y si tienes alguna duda puedes preguntarles sin ningún problema.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 11,
+    name: "Emma Rafaela Marroquin",
+    role: "Graduado",
+    content:
+      "Excelente curso de inglés. Me encanta cómo los profesores nos guían paso a paso, haciéndolo divertido y fácil de entender. Las prácticas de conversación son súper útiles y divertidas.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 12,
+    name: "Nahomi Oliveros",
+    role: "Graduado",
+    content:
+      "Gateway Corporation es una institución excepcional. Su dedicado equipo de instructores ofrece un entorno de aprendizaje estimulante y motivador, adaptado a las necesidades individuales de cada estudiante. Las clases son completas y los métodos de enseñanza son innovadores, lo que hace que el proceso de aprendizaje sea eficaz y ameno. Recomiendo ampliamente Gateway Corporation.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 13,
+    name: "Tifanny Narcisa Demera",
+    role: "Graduado",
+    content:
+      "En mi opinión puedo decir que es una excelente academia para aprender inglés con diferentes actividades, además tienen horarios flexibles para cada alumno.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+  {
+    id: 14,
+    name: "Jessica Escola",
+    role: "Graduado",
+    content:
+      "Es una excelente academia, la enseñanza es muy asertiva, cuentan con profesores nativos y muy profesionales.",
+    rating: 5,
+    program: "Gateway English For Everybody",
+    location: "Ibarra Norte",
+  },
+
 ];
 
 export const promotions = [

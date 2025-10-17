@@ -1,4 +1,3 @@
-import { programs } from "../data/mockdata";
 
 export const info = {
     title: "Gateway Academic",

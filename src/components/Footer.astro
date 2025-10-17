@@ -1,4 +1,8 @@
 ---
+import { programs } from "../data/mockdata";
+import { locations } from "../data/mockdata";
+import { info } from "./info";
+
 // No necesitamos importar lucide-react, usaremos SVG estáticos
 ---
 
@@ -44,21 +48,21 @@
               <svg class="mr-3 text-gateway-blue-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
-              <span>+593 2 123 4567</span>
+              <span>{info.contactPhone}</span>
             </div>
             <div class="flex items-center text-gray-300 dark:text-gray-400">
               <svg class="mr-3 text-gateway-blue-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <span>info@gatewaycorp.edu</span>
+              <span>{info.contactEmail}</span>
             </div>
             <div class="flex items-center text-gray-300 dark:text-gray-400">
               <svg class="mr-3 text-gateway-blue-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>Quito, Ecuador</span>
+              <span>{info.address}</span>
             </div>
           </div>
         </div>
@@ -99,31 +103,15 @@
         <div>
           <h4 class="text-lg mb-6 text-white dark:text-gray-100">Nuestros Programas</h4>
           <ul class="space-y-3">
-            <li>
-              <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
-                Gateway English Primaria
-              </a>
-            </li>
-            <li>
-              <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
-                Gateway Academic Secundaria
-              </a>
-            </li>
-            <li>
-              <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
-                Gateway Intensivo Adultos
-              </a>
-            </li>
-            <li>
-              <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
-                Gateway Summer Camp
-              </a>
-            </li>
-            <li>
-              <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
-                Gateway Corporate
-              </a>
-            </li>
+            {
+              programs.map((program) => (
+                <li>
+                  <a href="#programs" class="text-gray-300 dark:text-gray-400 hover:text-gateway-blue-light dark:hover:text-gateway-blue transition-colors duration-200">
+                    {program.title}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -131,18 +119,21 @@
         <div>
           <h4 class="text-lg mb-6 text-white dark:text-gray-100">Síguenos</h4> 
           <div class="flex space-x-4 mb-8">
-            <a href="#" class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
+            <a href={`${info.socialMediaLinks.facebook}`} class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="url(#facebook__a)" height="40" width="40"><defs><linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="facebook__a"><stop offset="0%" stop-color="#0062E0"/><stop offset="100%" stop-color="#19AFFF"/></linearGradient></defs><path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"/><path fill="#FFF" d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"/></svg>
             </a>
-            <a href="#" class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="Instagram">
+            <a href={`${info.socialMediaLinks.instagram}`} class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="Instagram">
              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256"><path fill="#fff" d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0Zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73Zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667Zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36Z"/></svg>
             </a>
             <!-- <a href="#" class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="Twitter">
               <svg viewBox="0 0 256 209" width="40" height="40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M256 25.45c-9.42 4.177-19.542 7-30.166 8.27 10.845-6.5 19.172-16.793 23.093-29.057a105.183 105.183 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52 0 4.117.465 8.125 1.36 11.97-43.65-2.191-82.35-23.1-108.255-54.876-4.52 7.757-7.11 16.78-7.11 26.404 0 18.222 9.273 34.297 23.365 43.716a52.312 52.312 0 0 1-23.79-6.57c-.003.22-.003.44-.003.661 0 25.447 18.104 46.675 42.13 51.5a52.592 52.592 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475-17.975 14.086-40.622 22.483-65.228 22.483-4.24 0-8.42-.249-12.529-.734 23.243 14.902 50.85 23.597 80.51 23.597 96.607 0 149.434-80.031 149.434-149.435 0-2.278-.05-4.543-.152-6.795A106.748 106.748 0 0 0 256 25.45" fill="#55acee"/></svg>
             </a> -->
-            <a href="#" class="bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-400 p-3 rounded-full hover:bg-gateway-blue hover:text-white dark:hover:bg-gateway-blue-light transition-all duration-300 transform hover:scale-110" aria-label="YouTube">
-             <svg viewBox="0 0 256 180" width="40" height="40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134Z" fill="red"/><path fill="#FFF" d="m102.421 128.06 66.328-38.418-66.328-38.418z"/></svg>
-            </a>
+            <!-- <a href={`${info.socialMediaLinks.linkedin}`} class="hover:text-gateway-secondary transition-colors" aria-label="Gateway Corporation en LinkedIn">
+            <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256"><path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" fill="#0A66C2"/></svg>
+          </a> -->
+          <a href={`${info.socialMediaLinks.tiktok}`}  aria-label="Gateway Corporation en TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333335 333336" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M72464 0h188407c39856 0 72464 32609 72464 72465v188407c0 39855-32608 72464-72464 72464H72464C32608 333336 0 300727 0 260872V72465C0 32609 32608 0 72464 0zm127664 70642c337 2877 825 5661 1461 8341l6304 2c1170 9991 4006 19119 8465 26697 7282 6745 16797 10904 28280 11641v9208c2131 444 4350 746 6659 894v29690c-14847 1462-27841-3426-42981-12531l2324 50847c0 16398 61 23892-8738 38977-20546 35222-58194 36677-82176 18323-12269-4256-23069-12466-29881-23612-19875-32516-1959-85512 55687-90966l-94 7835v1970c3105-646 6365-1144 9794-1468v31311c-12484 2057-20412 5890-24119 12980-7424 14197-4049 26526 3716 34309 16276 2796 34401-8481 31673-43351V70644h33628z" fill="#1a121f"/><path d="M200128 70642c3093 26406 18915 45038 44510 46681v25046l-165 15v-21275c-25595-1642-40311-17390-43404-43796l-27114-1v111095c3912 50005-35050 51490-49955 32531 17482 10934 45867 3826 42501-39202V70641h33628zm-72854 184165c-15319-3153-29249-12306-37430-25689-19875-32516-1959-85512 55687-90966l-94 7835c-53444 8512-58809 65920-44009 89802 5707 9209 15076 15686 25846 19019z" fill="#26f4ee"/><path d="M207892 78985c1761 15036 7293 28119 16454 36903-12866-6655-20630-19315-23062-36905l6609 2zm36580 47511c2181 463 4456 777 6824 929v29690c-14847 1462-27841-3426-42981-12531l2324 50847c0 16398 61 23892-8738 38977-21443 36760-61517 36743-85239 15810 30930 17765 84928 3857 84829-56453v-55496c15141 9105 28134 13993 42981 12530v-24302zm-99036 21460c3105-646 6365-1144 9794-1468v31311c-12484 2057-20412 5890-24119 12980-10441 19964 474 36238 14923 41365-18075-649-36010-19214-23555-43031 3707-7089 10474-10923 22958-12980v-28177z" fill="#fb2c53"/><path d="M201068 77313c3093 26406 17809 42154 43404 43796v29689c-14847 1462-27841-3425-42981-12530v55496c119 72433-77802 77945-100063 42025-14800-23881-9435-81290 44009-89802v30147c-12483 2057-19250 5891-22958 12980-22909 43808 56997 69872 51475-706V77313l27114 1z" fill="#fefefe"/></svg>
+          </a>
           </div>
           
           <div>

@@ -66,7 +66,7 @@ export default function ProgramsSectionInteractive() {
                         index === 1 ? 'bg-blue-500' : 
                         'bg-orange-500'
                       }`}>
-                        {index === 0 ? 'Primaria' : index === 1 ? 'Secundaria' : 'Especial'}
+                        {index === 0 ? '+ Vendido' : index === 1 ? 'Oferta' : 'Especial'}
                       </Badge>
                     </div>
                     <div className="absolute top-4 right-4">

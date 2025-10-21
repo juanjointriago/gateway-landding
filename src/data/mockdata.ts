@@ -384,16 +384,30 @@ export const promotions = [
   //   // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   //   type: "matricula",
   // },
+  // {
+  //   id: 3,
+  //   title: "Bono $150 en tu matricula",
+  //   description:
+  //     "REGRESO A CLASES!. TODO SEPTIEMBRE APRENDE INGLÉS Y OBTÉN UN BONO DE $150 EN TU MATRÍCULA.",
+  //   discount: "$150 OFF Matrícula",
+  //   validUntil: "2025-09-31",
+  //   terms:
+  //     "Aprende inglés 🇬🇧🇺🇸 y obtén tu certificación internacional Cambridge, IELTS, APTIS, TOEFL con nuestros profesores especializados, certificados y nativos.",
+  //       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+
+  //   // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   type: "matricula",
+  // },
   {
-    id: 3,
-    title: "Bono $150 en tu matricula",
+    id: 1,
+    title: "Trick or Teach!. ¡Una promoción que da miedo perderla!",
     description:
-      "REGRESO A CLASES!. TODO SEPTIEMBRE APRENDE INGLÉS Y OBTÉN UN BONO DE $150 EN TU MATRÍCULA.",
-    discount: "$150 OFF Matrícula",
-    validUntil: "2025-09-31",
+      "Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre.",
+    discount: "20% de OFF en tu programa",
+    validUntil: "2025-10-31",
     terms:
-      "Aprende inglés 🇬🇧🇺🇸 y obtén tu certificación internacional Cambridge, IELTS, APTIS, TOEFL con nuestros profesores especializados, certificados y nativos.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+      "Trick or Teach!. ¡Una promoción que da miedo perderla! Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre. Prepárate con nuestros profesores especializados, certificados y nativos para que obtengas tu certificación internacional Cambridge, IELTS, APTIS o TOEFL.",
+        image: "/promos/halloween.png",
 
     // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     type: "matricula",

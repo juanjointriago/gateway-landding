@@ -398,16 +398,35 @@ export const promotions = [
   //   // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   //   type: "matricula",
   // },
-  {
+  // {
+  //   id: 1,
+  //   title: "Trick or Teach!. ¡Una promoción que da miedo perderla!",
+  //   description:
+  //     "Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre.",
+  //   discount: "20% de OFF en tu programa",
+  //   validUntil: "2025-10-31",
+  //   terms:
+  //     "Trick or Teach!. ¡Una promoción que da miedo perderla! Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre. Prepárate con nuestros profesores especializados, certificados y nativos para que obtengas tu certificación internacional Cambridge, IELTS, APTIS o TOEFL.",
+  //       image: "/promos/halloween.png",
+
+  //   // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   type: "matricula",
+  // }
+
+    {
     id: 1,
-    title: "Trick or Teach!. ¡Una promoción que da miedo perderla!",
+    title: "¡PROMO ANIVERSARIO 2x1!. Gateway Corporation celebra 8 años transformando vidas a través del inglés 🎉",
     description:
-      "Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre.",
-    discount: "20% de OFF en tu programa",
-    validUntil: "2025-10-31",
+    `Habla desde tus primeras clases, avanza a tu propio ritmo y aprende con profesores certificados, especializados y nativos.
+
+Somos Centro Autorizado de Preparación Cambridge, donde aprendes inglés de forma práctica, dinámica y 100% conversacional.
+
+📚 Programas para todas las edades (niños desde 5 años, jóvenes y adultos), con estándares internacionales y resultados reales 🌍`,
+    discount: "🎁 PROMO 2x1",
+    validUntil: "2026-01-31",
     terms:
-      "Trick or Teach!. ¡Una promoción que da miedo perderla! Aprovecha un 20% de descuento en tu programa de inglés si te matriculas hasta el 31 de octubre. Prepárate con nuestros profesores especializados, certificados y nativos para que obtengas tu certificación internacional Cambridge, IELTS, APTIS o TOEFL.",
-        image: "/promos/halloween.png",
+      "",
+        image: "/promos/aniversary2026.png",
 
     // videoUlr: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     type: "matricula",

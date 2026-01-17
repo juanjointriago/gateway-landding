@@ -8,6 +8,7 @@ import { EnrollmentModal } from './EnrollmentModal';
 
 export default function PromotionsSectionInteractive() {
   const [selectedProgram, setSelectedProgram] = useState(null);
+  const [selectedPromotion, setSelectedPromotion] = useState(null);
   const [isEnrollmentModalOpen, setIsEnrollmentModalOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -30,9 +31,11 @@ export default function PromotionsSectionInteractive() {
 
     const programId = programMapping[promotionId];
     const program = programs.find(p => p.id === programId);
+    const promotion = promotions.find(p => p.id === promotionId);
     
     if (program) {
       setSelectedProgram(program as any);
+      setSelectedPromotion(promotion as any);
       setIsEnrollmentModalOpen(true);
     }
   };
@@ -164,6 +167,7 @@ export default function PromotionsSectionInteractive() {
       {/* Enrollment Modal */}
       <EnrollmentModal
         program={selectedProgram}
+        promotion={selectedPromotion}
         isOpen={isEnrollmentModalOpen}
         onClose={() => setIsEnrollmentModalOpen(false)}
       />
